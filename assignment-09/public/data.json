@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Web Development Bootcamp",
+        "image": "https://i.ibb.co/ypdcdz0/photo-2023-10-06-19-07-44.jpg",
+        "price": "$299",
+        "description": "Learn the latest web development technologies and build your own websites.",
+        "buttonText": "Learn More"
+    },
+    {
+        "name": "Data Science Masterclass",
+        "image": "https://i.ibb.co/xM7D54X/photo-2023-10-06-19-09-17.jpg",
+        "price": "$349",
+        "description": "Master data analysis, machine learning, and data visualization.",
+        "buttonText": "Discover"
+    },
+    {
+        "name": "Digital Marketing Workshop",
+        "image": "https://i.ibb.co/gMXQbFP/photo-2023-10-06-19-12-00.jpg",
+        "price": "$199",
+        "description": "Boost your online presence and marketing skills.",
+        "buttonText": "Get Started"
+    },
+    {
+        "name": "Photography Basics Course",
+        "image": "https://i.ibb.co/QMrkTWP/photo-2023-10-06-19-15-42.jpg",
+        "price": "$149",
+        "description": "Learn the fundamentals of photography and improve your skills.",
+        "buttonText": "See Details"
+    },
+    {
+        "name": "Language Learning Program",
+        "image": "https://i.ibb.co/dK4yPt0/photo-2023-10-06-19-23-32.jpg",
+        "price": "$129",
+        "description": "Become fluent in a new language with our immersive program.",
+        "buttonText": "Enroll Now"
+    },
+    {
+        "name": "Financial Planning Seminar",
+        "image": "https://i.ibb.co/kB14cfS/photo-2023-10-06-19-26-51.jpg",
+        "price": "$99",
+        "description": "Take control of your finances and plan for a secure future.",
+        "buttonText": "Register"
+    }
+]
