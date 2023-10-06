@@ -41,7 +41,7 @@ const Banner = () => {
                 <img className="mySlides rounded-lg" src="https://i.ibb.co/xM7D54X/photo-2023-10-06-19-09-17.jpg" alt="Los Angeles" />
                 <img className="mySlides rounded-lg" src="https://i.ibb.co/gMXQbFP/photo-2023-10-06-19-12-00.jpg" alt="Los Angeles" />
                 <img className="mySlides rounded-lg" src="https://i.ibb.co/QMrkTWP/photo-2023-10-06-19-15-42.jpg" alt="Los Angeles" />
-                <img className="mySlides rounded-lg" src="https://i.ibb.co/dK4yPt0/photo-2023-10-06-19-23-32.jpg" alt="Los Angeles" />
+                <img className="mySlides rounded-lg" src="https://i.ibb.co/1vNDv3V/13243rfgvcv.jpg" alt="Los Angeles" />
                 <img className="mySlides rounded-lg" src="https://i.ibb.co/kB14cfS/photo-2023-10-06-19-26-51.jpg" alt="Los Angeles" />
 
             </div>
