@@ -16,7 +16,8 @@ const Navbar = () => {
         <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/'>Home</NavLink></li>
         <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/register'>Register</NavLink></li>
         <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/login'>Login</NavLink></li>
-        <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/eventDetails'>Event Details</NavLink></li>
+        
+        
 
     </>
     return (

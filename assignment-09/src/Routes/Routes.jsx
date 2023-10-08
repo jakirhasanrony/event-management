@@ -5,11 +5,13 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Home/Register/Register";
 import EventDetails from "../Pages/Home/EventDetails/EventDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ErrorElement from "../ErrorElement/ErrorElement";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <ErrorElement></ErrorElement>,
         children: [
             {
                 path: '/',
@@ -19,6 +21,9 @@ const router = createBrowserRouter([
             {
                 path: '/card/:id',
                 element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
+                loader: ()=> fetch("/data.json")
+
+                
 
             },
             {
