@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Team = () => {
     return (
@@ -37,9 +38,10 @@ const Team = () => {
 
                         </div>
                     </div>
+                    <Link to="/instructorMore"><button className="btn bg-purple-600 text-white btn-xs sm:btn-sm md:btn-md lg:btn-lg">See More Instructors</button></Link>
 
                 </div>
-            </div>
+            </div>          
         </div>
     );
 };

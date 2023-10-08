@@ -27,12 +27,12 @@ const Banner = () => {
                 <div className='p-4 flex justify-center items-center'>
                     <button className="btn text-xl px-12 text-gray-500 font-bold glass ">Our currently available services</button>
                     <Marquee pauseOnHover={true} speed={150} >
-                        <Link className='mr-6 font-semibold' to='/register'>Web Development Bootcamp</Link>
-                        <Link className='mr-6 font-semibold' to='/'>Data Science Masterclass</Link>
-                        <Link className='mr-6 font-semibold' to='/'>Digital Marketing Workshop</Link>
-                        <Link className='mr-6 font-semibold' to='/'>Photography Basics Course</Link>
-                        <Link className='mr-6 font-semibold' to='/'>Language Learning Program</Link>
-                        <Link className='mr-6 font-semibold' to='/'>Financial Planning Seminar</Link>
+                        <Link className='mr-6 font-semibold' >Web Development Bootcamp</Link>
+                        <Link className='mr-6 font-semibold' >Data Science Masterclass</Link>
+                        <Link className='mr-6 font-semibold' >Digital Marketing Workshop</Link>
+                        <Link className='mr-6 font-semibold' >Photography Basics Course</Link>
+                        <Link className='mr-6 font-semibold' >Language Learning Program</Link>
+                        <Link className='mr-6 font-semibold' >Financial Planning Seminar</Link>
                     </Marquee>
                 </div>
 

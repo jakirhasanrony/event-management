@@ -6,6 +6,8 @@ import Register from "../Pages/Home/Register/Register";
 import EventDetails from "../Pages/Home/EventDetails/EventDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorElement from "../ErrorElement/ErrorElement";
+import MoreReview from "../Review/MoreReview";
+import MoreTeam from "../Team/MoreTeam";
 
 const router = createBrowserRouter([
     {
@@ -21,10 +23,16 @@ const router = createBrowserRouter([
             {
                 path: '/card/:id',
                 element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
-                loader: ()=> fetch("/data.json")
+                loader: ()=> fetch("/data.json")    
 
-                
-
+            },
+            {
+                path: '/reviewMore',
+                element: <PrivateRoute><MoreReview></MoreReview></PrivateRoute>,
+            },
+            {
+                path: '/instructorMore',
+                element: <PrivateRoute><MoreTeam></MoreTeam></PrivateRoute>,
             },
             {
                 path: '/login',
