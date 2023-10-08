@@ -1,10 +1,10 @@
 
-const EventFullInfo = ({event}) => {
-    const {name} = event;
+const EventFullInfo = ({ event }) => {
+
     console.log(event)
     return (
         <div>
-            <h2>{name}</h2>
+            <h2></h2>
         </div>
     );
 };
