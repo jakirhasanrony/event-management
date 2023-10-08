@@ -5,7 +5,8 @@
         "image": "https://i.ibb.co/ypdcdz0/photo-2023-10-06-19-07-44.jpg",
         "price": "$299",
         "description": "Learn the latest web development technologies and build your own websites.",
-        "buttonText": "Delve In"
+        "buttonText": "Delve In",
+        "more_description":"Join our cutting-edge web development workshop where you'll dive into the latest and most exciting technologies shaping the digital landscape. In this immersive experience, you'll acquire the skills needed to craft stunning websites from scratch. Over the course of the workshop, you'll explore a comprehensive range of topics, from HTML5 and CSS3 for structuring and styling your web pages, to JavaScript for adding interactivity and responsiveness. We'll also delve into modern front-end libraries and frameworks like React and Vue.js, empowering you to create dynamic user interfaces that captivate and engage your audience."
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "image": "https://i.ibb.co/xM7D54X/photo-2023-10-06-19-09-17.jpg",
         "price": "$349",
         "description": "Master data analysis, machine learning, and data visualization.",
-        "buttonText": "Go Beyond"
+        "buttonText": "Go Beyond",
+        "more_description":"The Data Mastery Workshop is an immersive and transformative learning experience that equips participants with the knowledge and skills to harness the power of data effectively. This comprehensive workshop delves deep into the world of data analytics, covering a wide range of topics such as data collection, cleansing, visualization, and advanced analytics techniques. Attendees can expect to gain proficiency in popular data analysis tools and programming languages like Python and R, enabling them to manipulate and extract insights from large datasets."
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "image": "https://i.ibb.co/gMXQbFP/photo-2023-10-06-19-12-00.jpg",
         "price": "$199",
         "description": "Boost your online presence and marketing skills.",
-        "buttonText": "Expand Your Knowledge"
+        "buttonText": "Expand Your Knowledge",
+        "more_description":"The Digital Marketing Workshop is a comprehensive program designed to equip participants with the knowledge and skills necessary to excel in the fast-paced world of online marketing. This workshop delves into various facets of digital marketing, including search engine optimization (SEO), social media marketing, email marketing, content creation, and data analytics. Throughout the workshop, participants will gain hands-on experience in crafting effective digital marketing strategies and campaigns, learning how to identify target audiences, optimize websites for search engines, create engaging content, and measure campaign performance"
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "image": "https://i.ibb.co/QMrkTWP/photo-2023-10-06-19-15-42.jpg",
         "price": "$149",
         "description": "Learn the fundamentals of photography and improve your skills.",
-        "buttonText": "Access Information"
+        "buttonText": "Access Information",
+        "more_description":"The Photography Bootcamp Workshop is an immersive and comprehensive learning experience designed to equip participants with the essential skills and knowledge needed to excel in the world of photography. Over the course of this workshop, aspiring photographers will delve into a wide range of topics, including camera operation, composition techniques, lighting principles, and post-processing methods. Through a combination of hands-on practical exercises and in-depth theoretical sessions, participants will gain a solid foundation in photography."
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "image": "https://i.ibb.co/1vNDv3V/13243rfgvcv.jpg",
         "price": "$129",
         "description": "Become fluent in a new language with our immersive program.",
-        "buttonText": "Explore Insights"
+        "buttonText": "Explore Insights",
+        "more_description":"From Novice to Native: A Language Learning Workshop is an immersive and comprehensive language learning program designed to empower participants with the skills and knowledge needed to progress from a beginner to an advanced, native-like proficiency level in their chosen language. This workshop offers a structured curriculum that covers all aspects of language acquisition, including vocabulary building, grammar mastery, pronunciation refinement, and cultural understanding. Through a combination of interactive exercises, real-world conversations, and multimedia resources, participants are guided on a transformative journey towards fluency."
     },
     {
         "id": 6,
@@ -45,6 +50,7 @@
         "image": "https://i.ibb.co/kB14cfS/photo-2023-10-06-19-26-51.jpg",
         "price": "$99",
         "description": "Take control of your finances and plan for a secure future.",
-        "buttonText": "Unlock Secrets"
+        "buttonText": "Unlock Secrets",
+        "more_description":"The Financial Planning Seminar is a comprehensive and invaluable workshop designed to empower individuals with the knowledge and skills needed to take control of their financial future. This seminar provides participants with essential insights into the world of personal finance, covering topics such as budgeting, saving, investing, retirement planning, and risk management. Led by seasoned financial experts, attendees will gain a deep understanding of the principles of financial planning, enabling them to make informed decisions about their money."
     }
 ]
