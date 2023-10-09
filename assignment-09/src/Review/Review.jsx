@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 const Review = () => {
     return (
-        <div data-aos="fade-down">
+        <div data-aos="fade-up"
+            data-aos-duration="3000">
 
             <div className="my-8 max-w-6xl p-6 rounded-lg shadow-lg border-8 mx-auto">
                 <h2 className="text-3xl rounded-lg mt-2 py-5  md:text-4xl lg:text-6xl font-bold text-center shadow-lg ">Customer Satisfaction</h2>

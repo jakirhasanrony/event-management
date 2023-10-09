@@ -7,7 +7,6 @@ import Team from "../../Team/Team";
 
 const Home = () => {
     const cards = useLoaderData();
-    console.log(cards)
     return (
         <div>
             <Banner></Banner>

@@ -1,15 +1,15 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
-import { FaEye ,FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-    const [showPassword,  setShowPassword] = useState(false);
-    const { signIn } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-    
+
 
     const handleLogin = e => {
         e.preventDefault();
@@ -25,7 +25,7 @@ const Login = () => {
                     title: 'Login Successful',
                     showConfirmButton: false,
                     timer: 1000
-                  })
+                })
                 console.log(result.user);
                 navigate(location?.state ? location.state : "/");
 
@@ -38,13 +38,29 @@ const Login = () => {
                     title: 'Login Unsuccessful',
                     showConfirmButton: false,
                     timer: 1000
-                  })
+                })
             })
     }
 
-    const handleGoogleLogin = () =>{
+    const handleGoogleLogin = () => {
         console.log("google btn clicked");
-        
+        signInWithGoogle()
+        .then(result =>{
+            console.log(result.user)
+            Swal.fire({
+                position: 'top-middle',
+                icon: 'success',
+                title: 'Login Successful',
+                showConfirmButton: false,
+                timer: 1000
+            })
+            navigate('/')
+        })
+        .catch(error =>{
+            console.error(error)
+            
+        })
+
 
     }
 
@@ -63,17 +79,17 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text font-bold text-gray-500">Password</span>
                         </label>
-                        <input 
-                        type= {showPassword ? "text" : "password" } 
-                        name="password" 
-                        placeholder="Provide your password here" className="input input-bordered" required /> 
-                        <span onClick={()=> setShowPassword(!showPassword)} className="absolute bottom-3 right-3 text-xl">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            name="password"
+                            placeholder="Provide your password here" className="input input-bordered" required />
+                        <span onClick={() => setShowPassword(!showPassword)} className="absolute bottom-3 right-3 text-xl">
                             {
-                                showPassword ? <FaEyeSlash></FaEyeSlash> :<FaEye></FaEye>
+                                showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                             }
-                
-                            </span>
-                      
+
+                        </span>
+
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Login</button>

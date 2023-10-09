@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProviders";
-import { FaEye ,FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { updateProfile } from "firebase/auth";
 
 
 
 const Register = () => {
-    const [showPassword,  setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
     const { createUserWithEmail } = useContext(AuthContext)
 
     const handleRegister = e => {
@@ -19,26 +20,26 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(name, photo, email, password);
-        
-        if(password.length < 6){
+
+        if (password.length < 6) {
             Swal.fire({
                 position: 'top-middle',
                 icon: 'error',
                 title: 'Password should be at least 6 character',
                 showConfirmButton: false,
                 timer: 1000
-              });
-              return;
+            });
+            return;
         }
-        else if(!/[A-Z]/.test(password)){
+        else if (!/[A-Z]/.test(password)) {
             Swal.fire({
                 position: 'top-middle',
                 icon: 'error',
                 title: 'Password should have at least one UpperCase Letter',
                 showConfirmButton: false,
                 timer: 1000
-              });
-              return;
+            });
+            return;
         }
         else if (!/[*.!@#$%^&(){}[\]:;<>,.?/~_+\-=|/]/.test(password)) {
             Swal.fire({
@@ -52,25 +53,26 @@ const Register = () => {
         }
 
         createUserWithEmail(email, password)
-        .then(result =>{
-            updateProfile(result.user,{
-                displayName : name,
-                photoURL : photo
-            })
-           
-        
+            .then(result => {
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photo
+                })
 
-            Swal.fire({
-                position: 'top-middle',
-                icon: 'success',
-                title: 'Registration Successful',
-                showConfirmButton: false,
-                timer: 1000
-              })
-        })
-        .catch(error =>{
-            console.error(error);
-        })
+
+                navigate('/')
+
+                Swal.fire({
+                    position: 'top-middle',
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
     return (
@@ -96,21 +98,21 @@ const Register = () => {
                     <input type="email" name="email" placeholder="Provide your email here" className="input input-bordered" required />
                 </div>
                 <div className="form-control  relative ">
-                        <label className="label">
-                            <span className="label-text font-bold text-gray-500">Password</span>
-                        </label>
-                        <input 
-                        type= {showPassword ? "text" : "password" } 
-                        name="password" 
-                        placeholder="Provide your password here" className="input input-bordered" required /> 
-                        <span onClick={()=> setShowPassword(!showPassword)} className="absolute bottom-3 right-3 text-xl">
-                            {
-                                showPassword ? <FaEyeSlash></FaEyeSlash> :<FaEye></FaEye>
-                            }
-                
-                            </span>
-                      
-                    </div>
+                    <label className="label">
+                        <span className="label-text font-bold text-gray-500">Password</span>
+                    </label>
+                    <input
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        placeholder="Provide your password here" className="input input-bordered" required />
+                    <span onClick={() => setShowPassword(!showPassword)} className="absolute bottom-3 right-3 text-xl">
+                        {
+                            showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                        }
+
+                    </span>
+
+                </div>
                 {/* <div className="form-control">
                     <label className="label">
                         <span className="label-text font-bold text-gray-500">Password</span>
