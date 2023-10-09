@@ -8,6 +8,8 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorElement from "../ErrorElement/ErrorElement";
 import MoreReview from "../Review/MoreReview";
 import MoreTeam from "../Team/MoreTeam";
+import PrivateRoute2 from "../PrivateRoute/PrivateRoute2";
+import PrivateRoute3 from "../PrivateRoute/PrivateRoute3";
 
 const router = createBrowserRouter([
     {
@@ -28,11 +30,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/reviewMore',
-                element: <PrivateRoute><MoreReview></MoreReview></PrivateRoute>,
+                element: <PrivateRoute2><MoreReview></MoreReview></PrivateRoute2>,
             },
             {
                 path: '/instructorMore',
-                element: <PrivateRoute><MoreTeam></MoreTeam></PrivateRoute>,
+                element: <PrivateRoute3><MoreTeam></MoreTeam></PrivateRoute3>,
             },
             {
                 path: '/login',
