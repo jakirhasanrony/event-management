@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const Login = () => {
@@ -35,7 +35,7 @@ const Login = () => {
                 Swal.fire({
                     position: 'top-middle',
                     icon: 'error',
-                    title: 'Login Unsuccessful',
+                    title: 'Please enter the correct mail and password',
                     showConfirmButton: false,
                     timer: 1000
                 })
@@ -45,21 +45,21 @@ const Login = () => {
     const handleGoogleLogin = () => {
         console.log("google btn clicked");
         signInWithGoogle()
-        .then(result =>{
-            console.log(result.user)
-            Swal.fire({
-                position: 'top-middle',
-                icon: 'success',
-                title: 'Login Successful',
-                showConfirmButton: false,
-                timer: 1000
+            .then(result => {
+                console.log(result.user)
+                Swal.fire({
+                    position: 'top-middle',
+                    icon: 'success',
+                    title: 'Login Successful',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                navigate('/')
             })
-            navigate('/')
-        })
-        .catch(error =>{
-            console.error(error)
-            
-        })
+            .catch(error => {
+                console.error(error)
+
+            })
 
 
     }
@@ -98,7 +98,19 @@ const Login = () => {
                 <p className="text-center text-gray-500  ">Do not have an account? Please <Link className="font-bold text-blue-500" to="/register">Register</Link></p>
             </div>
             <div className="flex justify-center items-center">
-                <button onClick={handleGoogleLogin} className="btn bg-purple-700 text-white btn-xs sm:btn-sm md:btn-md lg:btn-lg">Login With Google</button>
+                <div>
+
+                    <button onClick={handleGoogleLogin} className="btn  font-bold text-bl bg-purple-400 btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+
+                        <div className="text-blue-500">
+                            <FaGoogle></FaGoogle>
+                        </div>
+                        Login With Google
+
+                    </button>
+                </div>
+
+
             </div>
         </div>
     );
