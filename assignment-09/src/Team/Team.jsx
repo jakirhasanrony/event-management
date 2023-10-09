@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Team = () => {
     return (
-        <div data-aos="fade-right">
+        <div data-aos="fade-down">
             <div className="my-10 border-8 max-w-6xl shadow-lg mx-auto rounded-lg">
                 <h2 className="text-3xl rounded-lg mx-4 mt-8 py-5  md:text-4xl lg:text-6xl font-bold text-center shadow-lg ">Our Team, Our Pride</h2>
                 <div className=" flex gap-5  p-6 justify-center items-center flex-wrap">

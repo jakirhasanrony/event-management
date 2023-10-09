@@ -1,8 +1,14 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProviders";
+import { FaEye ,FaEyeSlash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import { updateProfile } from "firebase/auth";
+
+
 
 const Register = () => {
+    const [showPassword,  setShowPassword] = useState(false);
     const { createUserWithEmail } = useContext(AuthContext)
 
     const handleRegister = e => {
@@ -13,10 +19,54 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(name, photo, email, password);
+        
+        if(password.length < 6){
+            Swal.fire({
+                position: 'top-middle',
+                icon: 'error',
+                title: 'Password should be at least 6 character',
+                showConfirmButton: false,
+                timer: 1000
+              });
+              return;
+        }
+        else if(!/[A-Z]/.test(password)){
+            Swal.fire({
+                position: 'top-middle',
+                icon: 'error',
+                title: 'Password should have at least one UpperCase Letter',
+                showConfirmButton: false,
+                timer: 1000
+              });
+              return;
+        }
+        else if (!/[*.!@#$%^&(){}[\]:;<>,.?/~_+\-=|/]/.test(password)) {
+            Swal.fire({
+                position: 'top-middle',
+                icon: 'error',
+                title: 'Password should have at least one Special Character',
+                showConfirmButton: false,
+                timer: 1000
+            });
+            return;
+        }
 
         createUserWithEmail(email, password)
         .then(result =>{
-            console.log(result.user);
+            updateProfile(result.user,{
+                displayName : name,
+                photoURL : photo
+            })
+           
+        
+
+            Swal.fire({
+                position: 'top-middle',
+                icon: 'success',
+                title: 'Registration Successful',
+                showConfirmButton: false,
+                timer: 1000
+              })
         })
         .catch(error =>{
             console.error(error);
@@ -45,13 +95,29 @@ const Register = () => {
                     </label>
                     <input type="email" name="email" placeholder="Provide your email here" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control  relative ">
+                        <label className="label">
+                            <span className="label-text font-bold text-gray-500">Password</span>
+                        </label>
+                        <input 
+                        type= {showPassword ? "text" : "password" } 
+                        name="password" 
+                        placeholder="Provide your password here" className="input input-bordered" required /> 
+                        <span onClick={()=> setShowPassword(!showPassword)} className="absolute bottom-3 right-3 text-xl">
+                            {
+                                showPassword ? <FaEyeSlash></FaEyeSlash> :<FaEye></FaEye>
+                            }
+                
+                            </span>
+                      
+                    </div>
+                {/* <div className="form-control">
                     <label className="label">
                         <span className="label-text font-bold text-gray-500">Password</span>
                     </label>
                     <input type="password" name="password" placeholder="Provide your password here" className="input input-bordered" required />
 
-                </div>
+                </div> */}
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Register</button>
                 </div>

@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
     const { user, userLogOut } = useContext(AuthContext);
+    console.log(user)
 
     const handleSignOut = () => {
         userLogOut()
@@ -16,8 +17,10 @@ const Navbar = () => {
         <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/'>Home</NavLink></li>
         <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/register'>Register</NavLink></li>
         <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/login'>Login</NavLink></li>
-        
-        
+        <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/reviewMore'>Review More</NavLink></li>
+        <li><NavLink className="mr-8 text-lg font-bold text-gray-600" to='/instructorMore'>More Instructors</NavLink></li>
+
+
 
     </>
     return (
@@ -39,16 +42,35 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end mr-12">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img src="https://i.ibb.co/vYKK4tB/user.png" />
-                    </div>
-                </label>
+             
                 {
                     user ?
-                        <button onClick={handleSignOut} className="btn">Sign Out</button>
+                        <div className="flex justify-center items-center gap-3">
+                            <div>
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user.photoURL} />
+                                    </div>
+                                </label>
+
+                            </div>
+                            <div>
+                                <p className="text-lg font-bold text-gray-500">{user.displayName}</p>
+
+                            </div>
+                            <div>
+                                <button onClick={handleSignOut} className="btn">Sign Out</button>
+                            </div>
+                        </div>
                         :
-                        <Link to='/login'> <button className="btn">Login</button></Link>
+                        <div className="flex justify-end items-center gap-3">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src="https://i.ibb.co/vYKK4tB/user.png" />
+                                </div>
+                            </label>
+                            <Link to='/login'> <button className="btn">Login</button></Link>
+                        </div>
                 }
 
 
