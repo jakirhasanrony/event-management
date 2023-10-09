@@ -1,5 +1,5 @@
 # Website name: Educational and Training Events Management
-## Project Live Link: 
+## Project Live Link: https://assignment-09-74610.web.app/
 ### Here some features of this project:
 * ### Feature-01: Slider on Homepage:
  Display currently available services in an engaging slider format on the homepage, attracting visitors' attention to your offerings.
